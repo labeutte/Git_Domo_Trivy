@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Settings pour appli Domotik -->
+<Domotik>
+    <!-- PAR NOEUDS -->
+    <Param>
+        <IP_Interrupt>192.168.0.61</IP_Interrupt>
+        <num_carte>+33769813456</num_carte>
+        <mdpSMS>3456</mdpSMS>
+
+        <portSerie>/dev/ttyAMA0</portSerie>
+        <cle3G>1</cle3G>
+
+        <emiss433>0</emiss433>
+        <klaxonFil>1</klaxonFil>
+        <alimSec>1</alimSec>
+        
+        <mms_APN>mmsfree</mms_APN>
+        <mms_Centre>mms.free.fr</mms_Centre>
+        <mms_CentreH>http://212.27.40.255</mms_CentreH>
+        <mms_CentreIP>212.27.40.225</mms_CentreIP>
+        <mms_Proxy>212.27.40.225</mms_Proxy>
+        <mms_Port>80</mms_Port>
+    </Param>
+    
+    <Bdd>
+        <hostBdd>localhost</hostBdd>
+        <base>Surveillance</base>
+        <login>gilles</login>
+        <mdp>gilles</mdp>
+    </Bdd>
+    
+    <!-- PAR ATTRIBUTS -->
+    <Cayenne
+        username="00f66980-8126-11e9-ace6-4345fcc6b81e"
+        password="43a7ae8aabc694f8cb51a526609c5354a8249f3e"
+        clientID="d834fc40-646f-11ea-ba7c-716e7f5ba423"
+    />
+    
+    <Ftp
+        url="ftp://perso-ftp.orange.fr/Images/"
+        logMdp="gillesaucaigne@orange.fr:GillesA*21"
+    />
+
+    <Mqtt
+        hostname="localhost"
+        port="1883"
+        username="admin"
+        password="admin"
+        topicRECEP="DOMO/+"
+        topicEMISS="DOMO/relai"
+    />
+    
+    <Relai
+        marche="655360" 
+        arret="720896"
+        pinalim="31"
+        pintx="10"
+        pinrelai="3"
+        pinRF="2"
+        pindefalim="21"
+    />
+</Domotik>

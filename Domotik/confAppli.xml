@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Settings pour appli Domotik 
+    Version du 23/01/2021
+-->
+<Domotik>
+    <!-- PAR NOEUDS -->
+    <Param>
+        <IP_Interrupt>192.168.0.61</IP_Interrupt>
+        <num_carte>+33769813456</num_carte>
+        <mdpSMS>3456</mdpSMS>
+
+        <portSerie>/dev/ttyAMA0</portSerie>
+        <cle3G>0</cle3G>
+
+        <emiss433>0</emiss433>
+        <klaxonFil>0</klaxonFil>
+        <alimSec>1</alimSec>
+        <cayenne>0</cayenne>
+        
+        <mms_APN>mmsnrj</mms_APN>
+        <mms_Centre>http://mmsnrj</mms_Centre>
+        <mms_CentreH>http://mmsnrj</mms_CentreH>
+        <mms_CentreIP>http://mmsnrj</mms_CentreIP>
+        <mms_Proxy>10.143.156.5</mms_Proxy>
+        <mms_Port>8080</mms_Port>
+    </Param>
+    
+    <Bdd>
+        <hostBdd>localhost</hostBdd>
+        <base>Surveillance</base>
+        <login>gilles</login>
+        <mdp>gilles</mdp>
+    </Bdd>
+    
+    <!-- PAR ATTRIBUTS -->
+    <!-- Num des capteurs séparés par / ex "21/23/24" -->
+    <!-- Fréquence publication en s température et état -->
+    <Cayenne
+        numCaptTemp="21/23/24"
+        username="00f66980-8126-11e9-ace6-4345fcc6b81e"
+        password="43a7ae8aabc694f8cb51a526609c5354a8249f3e"
+        clientID="bde75370-8250-11ea-883c-638d8ce4c23d"
+        freqTemp="900"
+        freqEtat="600"
+    />
+    <!--
+    clientID :
+    St Denis : "911804c0-4b87-11ea-b301-fd142d6c1e6c"
+    Trivy-Nouveau : "bde75370-8250-11ea-883c-638d8ce4c23d"
+    Test : "d834fc40-646f-11ea-ba7c-716e7f5ba423"
+    -->
+    
+    <Ftp
+        url="ftp://perso-ftp.orange.fr/Images/Trivy"
+        logMdp="gillesaucaigne@orange.fr:GillesA*21"
+    />
+
+    <Mqtt
+        hostname="localhost"
+        port="1883"
+        username="admin"
+        password="admin"
+        topicRECEP="DOMO/+"
+        topicEMISS="DOMO/relai"
+    />
+
+    <!-- 
+        marche : freq qui actionne le relai 433 
+        arret : freq qui arrete le relai 433
+        pinalim : pin qui alimente la carte d'em 433
+                    (31 sur ancienne carte ; 3 sur nouvelle)
+        pintx : pin des datas de la carte d'em 433 
+                    (10 sur ancienne carte ; 0 sur nouvelle)
+        pinrelai : pin qui pilote le relai FILAIRE 
+                    (3 sur ancienne carte ; 13 sur nouvelle)
+        pinRF : pin de reception des datas de la carte Recep 433 (2)
+        pindefalim : pin qui détecte la coupure de courant(21)
+    -->
+    <Relai
+        marche="655360" 
+        arret="720896"
+        pinalim="3"
+        pintx="0"
+        pinrelai="13"
+        pinRF="2"
+        pindefalim="21"
+    />
+</Domotik>
